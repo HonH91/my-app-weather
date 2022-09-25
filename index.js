@@ -45,7 +45,6 @@ searchForm.addEventListener("submit", handleSubmit);
 function showWeather(response) {
   console.log(response.data);
   let iconElement = document.querySelector("#icon");
-
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#weatherDesc").innerHTML = response.data.weather[0].description;

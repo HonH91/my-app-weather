@@ -11,6 +11,7 @@ h1 {
 
 .searchBtn {
   width: 105%;
+  height: 36px;
 }
 
 /*input {
@@ -80,6 +81,7 @@ img {
 
 .search-form {
   margin-bottom: 20px;
+
 }
 
 .wrapper {
