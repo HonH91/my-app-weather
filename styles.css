@@ -1,18 +1,19 @@
-h1,
-h2,
-h3 {
-  margin: 30px 30px;
+body {
   font-family: Arial, "Times New Roman", Times, serif;
 }
 
 h1 {
+  margin: 10px 30px;
   color: #090808;
-  top: 30;
   position: relative;
   font-weight: 300;
 }
 
-input {
+.searchBtn {
+  width: 105%;
+}
+
+/*input {
   box-shadow: 0 1px 1px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 3%);
   height: 34px;
   padding: 10px;
@@ -23,21 +24,22 @@ input {
   border-color: blueviolet;
   top: 0px;
   float: text-align;
-}
+}*/
+
 ul {
   list-style-type: none;
 }
 
-.weather_serchbar {
+/*.weather_serchbar {
   text-align: center;
   width: 200px;
-}
+}*/
 
 .date-time {
   color: #333;
   font-size: 16px;
   font-weight: 100;
-  line-height: 20px;
+  line-height: 5px;
   padding-left: 10px;
   position: relative;
 }
@@ -45,22 +47,42 @@ ul {
 .temperature {
   color: #090808;
   float: left;
-  font-size: 34px;
-  font-weight: 300;
+  font-size: 64px;
+  font-weight: 400;
   line-height: 1;
-  padding-left: 10px;
+}
+
+.units {
+  position: relative;
+  top: 5px;
 }
 
 .current {
   color: #333;
   font-size: 16px;
   font-weight: 100;
-  text-align: center;
+  text-transform: capitalize;
+}
+
+.today-weather {
+  margin: 20px auto;
 }
 
 #forecast {
   text-align: center;
 }
+
 .search-form {
   margin-bottom: 20px;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.weather-app {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  border-radius: 10px;
 }

@@ -45,10 +45,17 @@ searchForm.addEventListener("submit", handleSubmit);
 function showWeather(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#weatherDesc").innerHTML = response.data.weather[0].description;
+  document.querySelector("#feelsLike").innerHTML = response.data.main.feels_like;
+  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#visibility").innerHTML = response.data.visibility;
+  document.querySelector("#pressure").innerHTML = response.data.main.pressure;
+
+
 }
+
+
 
 function findCity(city) {
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
