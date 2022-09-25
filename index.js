@@ -44,6 +44,8 @@ searchForm.addEventListener("submit", handleSubmit);
 
 function showWeather(response) {
   console.log(response.data);
+  let iconElement = document.querySelector("#icon");
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#weatherDesc").innerHTML = response.data.weather[0].description;
@@ -52,7 +54,11 @@ function showWeather(response) {
   document.querySelector("#visibility").innerHTML = response.data.visibility;
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
 
-
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 

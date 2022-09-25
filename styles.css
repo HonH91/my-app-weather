@@ -35,6 +35,12 @@ ul {
   width: 200px;
 }*/
 
+img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
 .date-time {
   color: #333;
   font-size: 16px;
