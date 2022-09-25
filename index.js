@@ -45,8 +45,9 @@ searchForm.addEventListener("submit", handleSubmit);
 function showWeather(response) {
   console.log(response.data);
   let iconElement = document.querySelector("#icon");
+  celcTemp = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = Math.round(celcTemp);
   document.querySelector("#weatherDesc").innerHTML = response.data.weather[0].description;
   document.querySelector("#feelsLike").innerHTML = response.data.main.feels_like;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -58,8 +59,19 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("class", "float-left");
 }
 
+function displayImperialTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let imperialTemperature = (celcTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(imperialTemperature);
+}
+
+let imperialLink = document.querySelector("#fLink");
+imperialLink.addEventListener("click", displayImperialTemp);
+let celcTemp = null;
 
 
 function findCity(city) {
