@@ -46,6 +46,7 @@ function showWeather(response) {
   console.log(response.data);
   let iconElement = document.querySelector("#icon");
   celcTemp = response.data.main.temp;
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celcTemp);
   document.querySelector("#weatherDesc").innerHTML = response.data.weather[0].description;
@@ -75,12 +76,25 @@ function formateDate(timeStamp) {
 function displayImperialTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  metricLink.classList.remove("active");
+  imperialLink.classList.add("active");
   let imperialTemperature = (celcTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(imperialTemperature);
 }
 
+function displayMetricTemp(event) {
+  event.preventDefault();
+  metricLink.classList.add("active");
+  imperialLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celcTemp);
+}
+
 let imperialLink = document.querySelector("#fLink");
 imperialLink.addEventListener("click", displayImperialTemp);
+
+let metricLink = document.querySelector("#cLink");
+metricLink.addEventListener("click", displayMetricTemp);
 
 let celcTemp = null;
 
