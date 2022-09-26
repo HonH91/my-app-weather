@@ -60,6 +60,16 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   iconElement.setAttribute("class", "float-left");
+
+  document.querySelector("#sunrise").innerHTML = formateDate(response.data.sys.sunrise * 1000);
+  document.querySelector("#sunset").innerHTML = formateDate(response.data.sys.sunset * 1000);
+}
+
+function formateDate(timeStamp) {
+  let date = new Date(timeStamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  return hours + ":" + minutes;
 }
 
 function displayImperialTemp(event) {
@@ -71,6 +81,7 @@ function displayImperialTemp(event) {
 
 let imperialLink = document.querySelector("#fLink");
 imperialLink.addEventListener("click", displayImperialTemp);
+
 let celcTemp = null;
 
 
