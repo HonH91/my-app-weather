@@ -30,6 +30,33 @@ function currentDate(date) {
   cityElement.innerHTML = cityInput.value;
 }*/
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                    <div class="col-2">
+                        <div class="forecastDate">${day}</div>
+                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="42" />
+                        <div class="forecastTemperatures">
+                            <span class="forecastTemperatureMax"> 14° </span>
+                            <span class="forecastTemperatureMin"> 7° </span>
+                        </div>
+                    </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+
 let dateElement = document.querySelector("#date");
 
 let currentTime = new Date();
@@ -110,3 +137,4 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   findCity(city);
 }
+displayForecast();
