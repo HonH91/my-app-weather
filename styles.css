@@ -1,5 +1,6 @@
 body {
   font-family: Arial, "Times New Roman", Times, serif;
+
 }
 
 h1 {
@@ -93,6 +94,7 @@ img {
   border: 1px solid #dadde1;
   padding: 15px;
   border-radius: 10px;
+  background: linear-gradient(90deg, rgb(250, 232, 251) 0%, rgb(228, 222, 248) 100%);
 }
 
 .hide {

@@ -151,3 +151,4 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   findCity(city);
 }
+findCity("Calgary");
